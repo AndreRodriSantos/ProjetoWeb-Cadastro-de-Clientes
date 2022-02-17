@@ -14,7 +14,7 @@
 	<tr>
 		<th>Id</th>
 		<th>Nome</th>
-		<th>Idade</th>
+		<th>Data de Nascimento</th>
 		<th>Email</th>
 		<th>Endereço</th>
 		<th>Genero</th>
@@ -26,7 +26,7 @@
 		<tr>
 			<td>${c.id }</td>
 			<td>${c.nome }</td>
-			<td>${c.idade }</td>
+			<td><a:formatDate pattern="dd/MM/yyyy" value="${c.data.time }"/></td>
 			<td>${c.email }</td>
 			<td>${c.endereco }</td>
 			<td>${c.genero }</td>

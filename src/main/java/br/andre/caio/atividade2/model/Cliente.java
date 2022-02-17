@@ -1,9 +1,14 @@
 package br.andre.caio.atividade2.model;
 
+import java.util.Calendar;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Cliente {
 	private long id;
 	private String nome;
-	private int idade;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Calendar data;
 	private String email;
 	private String endereco;
 	private String genero;
@@ -22,11 +27,11 @@ public class Cliente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getIdade() {
-		return idade;
+	public Calendar getData() {
+		return data;
 	}
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setData(Calendar data) {
+		this.data = data;
 	}
 	public String getEmail() {
 		return email;

@@ -26,7 +26,7 @@
 
             <form id="register" class="input-goup" action="salvarCliente">
                 <input type="text" class="input-field" placeholder="Nome" required name="nome">
-                <input type="number" class="input-field" placeholder="Idade" required name="idade">
+                <input type="date" class="input-field" placeholder="Data de Nascimento" required name="data">
                 <input type="email" class="input-field" placeholder="Email " required name="email">
                 <input type="password" class="input-field" placeholder="Enter Password" required>
                 
