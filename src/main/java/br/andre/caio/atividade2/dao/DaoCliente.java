@@ -38,7 +38,27 @@ public class DaoCliente {
 			throw new RuntimeException(e);
 		}
 	}
-
+	
+	public void atualizar(Cliente cliente) {
+		String sql = "update produto set nome = ?, data = ?, genero = ?, endereco = ?, email = ?, telefone = ?, produtoPref = ? where id = ?";
+		PreparedStatement stmt;
+		try {
+			stmt = conexao.prepareStatement(sql);
+			stmt.setString(1, cliente.getNome());
+			stmt.setDate(2, new Date(cliente.getData().getTimeInMillis()));
+			stmt.setString(3, cliente.getGenero());
+			stmt.setString(4, cliente.getEndereco());
+			stmt.setString(5, cliente.getEmail());
+			stmt.setString(6, cliente.getTelefone());
+			stmt.setString(7, cliente.getProdutoPref());
+			stmt.execute();
+			conexao.close();
+			stmt.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+		
 	public List<Cliente> listar() {
 		String sql = "select * from cliente order by nome asc";
 		List<Cliente> lista = new ArrayList<Cliente>();
@@ -50,9 +70,6 @@ public class DaoCliente {
 				Cliente c = new Cliente();
 				c.setId(result.getLong("id"));
 				c.setNome(result.getString("nome"));
-				c.setEmail(result.getString("email"));
-				c.setEndereco(result.getString("endereco"));
-				
 				// criar um Calendar
 				Calendar nascimento = Calendar.getInstance();				
 				// extrair o Date do result set				
@@ -61,7 +78,8 @@ public class DaoCliente {
 				nascimento.setTimeInMillis(dataBd.getTime());				
 				// setar a validade no produto
 				c.setData(nascimento);
-				
+				c.setEmail(result.getString("email"));
+				c.setEndereco(result.getString("endereco"));
 				c.setGenero(result.getString("genero"));
 				c.setTelefone(result.getString("telefone"));
 				c.setProdutoPref(result.getString("produtoPref"));

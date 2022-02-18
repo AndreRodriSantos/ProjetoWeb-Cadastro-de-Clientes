@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Lista de Clientes</title>
 </head>
 <body>
 	<h1>Lista de Cliente</h1>
@@ -21,6 +21,7 @@
 		<th>Telefone</th>
 		<th>Produto de Preferência</th>
 		<th>Excluir</th>
+		<th>Alterar</th>
 	<tr>
 	<c:forEach items="${clientes }" var="c">
 		<tr>
@@ -33,6 +34,7 @@
 			<td>${c.telefone }</td>
 			<td>${c.produtoPref }</td>
 			<td><a href="excluirCliente?idCliente=${c.id}" onclick="return confirm('Deseja excluir?')">Excluir</a></td>
+			<td><a href="alterarCliente?idCliente=${c.id}">Alterar</a></td>
 		</tr>
 	</c:forEach>
 	</table>

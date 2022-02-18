@@ -31,4 +31,10 @@ public class AtividadeController {
 	dao.excluir(idCliente);
 	return "redirect: lista_Cliente";
 	}
+	@RequestMapping("alterarCliente")
+	public String alterar(long idCliente, Model model) {
+		DaoCliente dao = new DaoCliente();
+		model.addAttribute("cliente", dao.buscar(idCliente));
+		return "forward:index";
+	}
 }
