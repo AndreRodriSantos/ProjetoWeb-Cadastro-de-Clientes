@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.andre.caio.atividade2.dao.DaoCliente;
 import br.andre.caio.atividade2.model.Cliente;
+import br.andre.caio.atividade2.model.Estatistica;
 
 @Controller
 public class AtividadeController {
@@ -34,7 +35,13 @@ public class AtividadeController {
 	@RequestMapping("alterarCliente")
 	public String alterar(long idCliente, Model model) {
 		DaoCliente dao = new DaoCliente();
-		model.addAttribute("cliente", dao.buscar(idCliente));
+		model.addAttribute("clientes", dao.buscar(idCliente));
 		return "forward:index";
+	}
+	@RequestMapping("Estatistica")
+	public String Estatisticas(Model model) {
+		DaoCliente dao = new DaoCliente();
+		model.addAttribute("status", dao.contGen());
+		return "Estatisticas";
 	}
 }

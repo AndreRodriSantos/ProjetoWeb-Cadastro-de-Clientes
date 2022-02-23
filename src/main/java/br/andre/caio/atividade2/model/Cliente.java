@@ -14,6 +14,8 @@ public class Cliente {
 	private String genero;
 	private String telefone;
 	private String produtoPref;
+	private int qtdMasc;
+	private int qtdFem;
 	
 	public long getId() {
 		return id;
@@ -63,6 +65,17 @@ public class Cliente {
 	public void setProdutoPref(String produtoPref) {
 		this.produtoPref = produtoPref;
 	}
-	
+	public int getQtdMasc() {
+		return qtdMasc;
+	}
+	public void setQtdMasc(int qtdMasc) {
+		this.qtdMasc = qtdMasc;
+	}
+	public int getQtdFem() {
+		return qtdFem;
+	}
+	public void setQtdFem(int qtdFem) {
+		this.qtdFem = qtdFem;
+	}
 	
 }

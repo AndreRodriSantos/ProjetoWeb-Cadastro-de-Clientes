@@ -7,9 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
 import br.andre.caio.atividade2.model.Cliente;
+import br.andre.caio.atividade2.model.Estatistica;
 
 public class DaoCliente {
 	private Connection conexao;
@@ -38,9 +40,8 @@ public class DaoCliente {
 			throw new RuntimeException(e);
 		}
 	}
-	
 	public void atualizar(Cliente cliente) {
-		String sql = "update produto set nome = ?, data = ?, genero = ?, endereco = ?, email = ?, telefone = ?, produtoPref = ? where id = ?";
+		String sql = "update cliente set nome = ?, data = ?, genero = ?, endereco = ?, email = ?, telefone = ?, produtoPref = ? where id = ?";
 		PreparedStatement stmt;
 		try {
 			stmt = conexao.prepareStatement(sql);
@@ -58,7 +59,6 @@ public class DaoCliente {
 			throw new RuntimeException(e);
 		}
 	}
-		
 	public List<Cliente> listar() {
 		String sql = "select * from cliente order by nome asc";
 		List<Cliente> lista = new ArrayList<Cliente>();
@@ -139,5 +139,36 @@ public class DaoCliente {
 		}catch(Exception e) {
 			throw new RuntimeException(e);
 		}
+		
+	}
+	public Estatistica contGen() {
+		String sql = "select genero from cliente";
+		PreparedStatement stmt;
+		Estatistica status = null;
+		Cliente c = null;
+		try {
+			stmt = conexao.prepareStatement(sql);
+			ResultSet result = stmt.executeQuery();
+			status = new Estatistica();
+			while(result.next()){
+				c = new Cliente();
+				c.setGenero(result.getString("genero"));
+				if(c.getGenero().equals("Masculino")) {
+					status.getQtdMasculino();
+				}else {
+					status.getQtdFeminino();
+					
+				}
+			}
+			System.out.println(status.getQtdMasculino());
+			System.out.println(status.getQtdFeminino());
+			conexao.close();
+			stmt.close();
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return status;
+		
 	}
 }
