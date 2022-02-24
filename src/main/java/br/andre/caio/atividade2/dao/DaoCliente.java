@@ -27,7 +27,7 @@ public class DaoCliente {
 
 	public void inserir(Cliente cliente) {
 		String sql = "insert into cliente"
-				+ "(nome, data, genero, endereco, email, telefone, produtoPref, horaCadastro, diaSemana) values (?,?,?,?,?,?,?,?,?)";
+				+ "(nome, data, genero, endereco, email, telefone, produtoPref, horaCadastro, diaSemana, idade) values (?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement stmt;
 		try {
 			stmt = conexao.prepareStatement(sql);
@@ -38,6 +38,7 @@ public class DaoCliente {
 			stmt.setString(5, cliente.getEmail());
 			stmt.setString(6, cliente.getTelefone());
 			stmt.setInt(7, cliente.getProdutoPref().ordinal());
+			
 
 			// pega a data atual e converte somente para horas
 			LocalDateTime agora = LocalDateTime.now();
@@ -59,6 +60,15 @@ public class DaoCliente {
 			int diaDaSemana = gc.get(GregorianCalendar.DAY_OF_WEEK);
 			cliente.setDiaSemana(diaDaSemana);
 			stmt.setInt(9, cliente.getDiaSemana());
+			
+			//faixa etária Jovem, Adulto, Idoso
+			
+			DateTimeFormatter formatter_ano = DateTimeFormatter.ofPattern("yyyy");
+			String ano = formatter.format(LocalDateTime.now());
+			int anoConvertido = Integer.parseInt(ano);
+			
+			int idadeResult = 0;
+			stmt.setInt(10, cliente.getIdade());
 			
 			stmt.execute();
 			conexao.close();
@@ -197,72 +207,85 @@ public class DaoCliente {
 			result = stmt.executeQuery();
 			status = new Estatistica();
 			int qtdMasc = 0, qtdFem = 0, dia = 0, tarde = 0, noite = 0;
+			int dom = 0, seg = 0, ter = 0, qua = 0, qui = 0, sex = 0, sab = 0;
+			int qtdJovem = 0, qtdAdulto = 0, qtdIdoso = 0;
 			while (result.next()) {
 				c = new Cliente();
 				c.setGenero(result.getString("genero"));
 				// Conta os generos
 				if (c.getGenero().equals("Masculino")) {
 					qtdMasc++;
-					status.setQtdMasculino(qtdMasc);
+					
 				} else {
 					qtdFem++;
-					status.setQtdFeminino(qtdFem);
+					
 				}
 				
 				// conta o periodo do Dia
 				c.setHoraCadastro(result.getInt("horaCadastro"));
 				if (c.getHoraCadastro() < 12) {
 					dia++;
-					status.setQtdDia(dia);
+					
 				} else if (c.getHoraCadastro() < 18) {
 					tarde++;
-					status.setQtdTarde(tarde);
+					
 				} else {
 					noite++;
-					status.setQtdNoite(noite);
+					
 
 				}
 				
 				//conta o dias da semana
 				c.setDiaSemana(result.getInt("diaSemana"));
-				int dom = 0, seg = 0, ter = 0, qua = 0, qui = 0, sex = 0, sab = 0;
+				
 				switch (c.getDiaSemana()) {
 				case 1:
-					dom ++;
-					status.setDom(dom);
+					dom++;					
 					break;
 				case 2:
-					seg ++;
-					status.setSeg(seg);
+					seg++;					
 					break;
 				case 3:
-					ter++;
-					status.setTer(ter);
+					ter++;					
 					break;
 				case 4:
-					qua++;
-					status.setQua(qua);
+					qua++;					
 					break;
 				case 5:
-					qui++;
-					status.setQui(qui);
+					qui++;					
 					break;
 				case 6:
 					sex++;
-					status.setSex(sex);
 					break;
 				case 7:
 					sab++;
-					status.setSab(sab);
-					break;
-				default:
 					break;
 				}
 			}
+			//Calendar cal = Calendar.getInstance();
+			//int anoatual;
+			//Calendar.get
+			
 			stmt.execute();
 			stmt.close();
 			result.close();
 			conexao.close();
+			
+			//coloca os valores nos status
+			status.setQtdMasculino(qtdMasc);
+			status.setQtdFeminino(qtdFem);
+			status.setQtdDia(dia);
+			status.setQtdTarde(tarde);
+			status.setQtdNoite(noite);
+			
+			//dias da semana
+			status.setDom(dom);
+			status.setSeg(seg);
+			status.setTer(ter);
+			status.setQua(qua);
+			status.setQui(qui);
+			status.setSex(sex);
+			status.setSab(sab);
 
 		} catch (SQLException e) {
 			e.printStackTrace();

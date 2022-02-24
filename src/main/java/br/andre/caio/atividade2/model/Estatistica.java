@@ -9,6 +9,8 @@ public class Estatistica {
 	private int qtdTarde;
 	private int qtdNoite;
 	private int dom, seg, ter, qua, qui, sex, sab;
+	private int jovem , adulto , idoso;
+	
 	
 	public int getQtdMasculino() {
 		return qtdMasculino;
@@ -82,6 +84,26 @@ public class Estatistica {
 	public void setSab(int sab) {
 		this.sab = sab;
 	}
+	public int getJovem() {
+		return jovem;
+	}
+	public void setJovem(int jovem) {
+		this.jovem = jovem;
+	}
+	public int getAdulto() {
+		return adulto;
+	}
+	public void setAdulto(int adulto) {
+		this.adulto = adulto;
+	}
+	public int getIdoso() {
+		return idoso;
+	}
+	public void setIdoso(int idoso) {
+		this.idoso = idoso;
+	}
+	
+	
 	
 	}
 	
