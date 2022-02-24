@@ -41,7 +41,7 @@ public class AtividadeController {
 	@RequestMapping("Estatistica")
 	public String Estatisticas(Model model) {
 		DaoCliente dao = new DaoCliente();
-		model.addAttribute("status", dao.contGen());
+		model.addAttribute("status", dao.contador());
 		return "Estatisticas";
 	}
 }

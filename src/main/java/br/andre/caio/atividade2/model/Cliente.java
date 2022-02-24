@@ -5,7 +5,7 @@ import java.util.Calendar;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Cliente {
-	private long id;
+	private Long id;
 	private String nome;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Calendar data;
@@ -14,13 +14,13 @@ public class Cliente {
 	private String genero;
 	private String telefone;
 	private String produtoPref;
-	private int qtdMasc;
-	private int qtdFem;
+	private int horaCadastro;
+	private int diaSemana;
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {
@@ -65,17 +65,17 @@ public class Cliente {
 	public void setProdutoPref(String produtoPref) {
 		this.produtoPref = produtoPref;
 	}
-	public int getQtdMasc() {
-		return qtdMasc;
+	public int getHoraCadastro() {
+		return horaCadastro;
 	}
-	public void setQtdMasc(int qtdMasc) {
-		this.qtdMasc = qtdMasc;
+	public void setHoraCadastro(int horaCadastro) {
+		this.horaCadastro = horaCadastro;
 	}
-	public int getQtdFem() {
-		return qtdFem;
+	public int getDiaSemana() {
+		return diaSemana;
 	}
-	public void setQtdFem(int qtdFem) {
-		this.qtdFem = qtdFem;
+	public void setDiaSemana(int diaSemana) {
+		this.diaSemana = diaSemana;
 	}
 	
 }
