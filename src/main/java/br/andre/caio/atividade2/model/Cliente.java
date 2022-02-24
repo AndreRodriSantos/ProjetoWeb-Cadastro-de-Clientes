@@ -13,7 +13,7 @@ public class Cliente {
 	private String endereco;
 	private String genero;
 	private String telefone;
-	private String produtoPref;
+	private produtoPreferencia produtoPref;
 	private int horaCadastro;
 	private int diaSemana;
 	
@@ -59,10 +59,10 @@ public class Cliente {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public String getProdutoPref() {
+	public produtoPreferencia getProdutoPref() {
 		return produtoPref;
 	}
-	public void setProdutoPref(String produtoPref) {
+	public void setProdutoPref(produtoPreferencia produtoPref) {
 		this.produtoPref = produtoPref;
 	}
 	public int getHoraCadastro() {

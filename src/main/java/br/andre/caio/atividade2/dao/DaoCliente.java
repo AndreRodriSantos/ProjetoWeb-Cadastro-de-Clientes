@@ -16,6 +16,7 @@ import java.util.List;
 
 import br.andre.caio.atividade2.model.Cliente;
 import br.andre.caio.atividade2.model.Estatistica;
+import br.andre.caio.atividade2.model.produtoPreferencia;
 
 public class DaoCliente {
 	private Connection conexao;
@@ -36,7 +37,7 @@ public class DaoCliente {
 			stmt.setString(4, cliente.getEndereco());
 			stmt.setString(5, cliente.getEmail());
 			stmt.setString(6, cliente.getTelefone());
-			stmt.setString(7, cliente.getProdutoPref());
+			stmt.setInt(7, cliente.getProdutoPref().ordinal());
 
 			// pega a data atual e converte somente para horas
 			LocalDateTime agora = LocalDateTime.now();
@@ -51,7 +52,7 @@ public class DaoCliente {
 			String data = dataformat.format(LocalDateTime.now());
 			GregorianCalendar gc = new GregorianCalendar();
 			try {
-				gc.setTime(new SimpleDateFormat("dd/MM/yyyy").parse(data));
+				gc.setTime(new SimpleDateFormat("dd-MM-yyyy").parse(data));
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
@@ -78,7 +79,8 @@ public class DaoCliente {
 			stmt.setString(4, cliente.getEndereco());
 			stmt.setString(5, cliente.getEmail());
 			stmt.setString(6, cliente.getTelefone());
-			stmt.setString(7, cliente.getProdutoPref());
+			stmt.setInt(7, cliente.getProdutoPref().ordinal());
+			stmt.setLong(8, cliente.getId());
 			stmt.execute();
 			conexao.close();
 			stmt.close();
@@ -110,7 +112,12 @@ public class DaoCliente {
 				c.setEndereco(result.getString("endereco"));
 				c.setGenero(result.getString("genero"));
 				c.setTelefone(result.getString("telefone"));
-				c.setProdutoPref(result.getString("produtoPref"));
+				
+			
+				int posEnum = result.getInt("produtoPref");
+				produtoPreferencia tipo = produtoPreferencia.values()[posEnum];
+				c.setProdutoPref(tipo);
+				
 				lista.add(c);
 			}
 			conexao.close();
@@ -129,9 +136,10 @@ public class DaoCliente {
 		PreparedStatement stmt;
 		try {
 			stmt = conexao.prepareStatement(sql);
+			stmt.setLong(1, idCliente);
 			ResultSet result = stmt.executeQuery();
 			if (result.next()) {
-				c = new Cliente();
+				c = new Cliente();	
 				c.setId(result.getLong("id"));
 				c.setNome(result.getString("nome"));
 				c.setEmail(result.getString("email"));
@@ -146,7 +154,13 @@ public class DaoCliente {
 				c.setData(nascimento);
 				c.setGenero(result.getString("genero"));
 				c.setTelefone(result.getString("telefone"));
-				c.setProdutoPref(result.getString("produtoPref"));
+				
+				int posEnum = result.getInt("produtoPref");
+				produtoPreferencia tipo = produtoPreferencia.values()[posEnum];
+				c.setProdutoPref(tipo);
+				
+				c.setDiaSemana(result.getInt("diaSemana"));
+				c.setHoraCadastro(result.getInt("horaCadastro"));
 			}
 			conexao.close();
 			stmt.close();

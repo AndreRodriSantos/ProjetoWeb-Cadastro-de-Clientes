@@ -1,3 +1,8 @@
+<%@page import="br.andre.caio.atividade2.model.produtoPreferencia"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,27 +30,30 @@
             </form>
 
             <form id="register" class="input-goup" action="salvarCliente">
-                <input type="text" class="input-field" placeholder="Nome" required name="nome">
-                <input type="date" class="input-field" placeholder="Data de Nascimento" required name="data">
-                <input type="email" class="input-field" placeholder="Email " required name="email">
+            	<input type="hidden" name="id" value="${clientes.id }">
+            
+                <input type="text" class="input-field" placeholder="Nome" required name="nome" value="${clientes.nome }">
+                 
+                <input type="date" class="input-field" placeholder="Data de Nascimento" required name="data"value="<fmt:formatDate pattern="yyyy-MM-dd" value="${clientes.data.time }"/>" >
+                
+                <input type="email" class="input-field" placeholder="Email " required name="email" value="${clientes.email }">
+               
                 <input type="password" class="input-field" placeholder="Enter Password" required>
                 
-                <input type="text" class="input-field" placeholder="Endereco" name="endereco">
-                <input type="tel" class="input-field" placeholder="Telefone" required name="telefone">
+                <input type="text" class="input-field" placeholder="Endereco" name="endereco" value="${clientes.endereco }">
+                <input type="tel" class="input-field" placeholder="Telefone" required name="telefone" value="${clientes.telefone }">
                 
-                <input type="radio" id="Feminino" name="genero" value="Feminino" required="required">
+                <input type="radio" id="Feminino" name="genero" value="Feminino" required="required" value="${clientes.genero }">
                 <label for="Feminino">Feminino</label><br>
-                <input type="radio" id="Masculino" name="genero" value="Masculino" required="required">
+                <input type="radio" id="Masculino" name="genero" value="Masculino" required="required" value="${clientes.genero }">
                 <label for="Masculino">Masculino</label><br>
             
-                <label for="">Produtos de preferencia :</label>
-                
-                <select name="produtoPref" class="tp-produto">
-                    <option class="itens-pr" value="Sorvete">Sorvete</option>
-                    <option value="MilkShake">MilkShake</option>
-                    <option value="Sandue">Sandue</option>
-                    <option value="Picole">Picolé</option>
-                </select>
+                <label for="">Produtos de preferencia :</label>      
+                <select name="produtoPref" class="tp-produto">				
+					<c:forEach items="${tipos}" var="t">
+						<option <c:if test="${cliente.produtoPref == t }">selected</c:if> value="${t}">${t.toString()}</option>
+					</c:forEach>
+				</select>
                 
                 
                <!--  <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span> -->
