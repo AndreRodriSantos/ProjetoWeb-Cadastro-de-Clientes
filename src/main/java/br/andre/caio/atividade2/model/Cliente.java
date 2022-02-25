@@ -17,7 +17,7 @@ public class Cliente {
 	private int horaCadastro;
 	private int diaSemana;
 	private int idade;
-	private int year = data.get(Calendar.YEAR);
+	
 	
 	public Long getId() {
 		return id;
@@ -85,11 +85,6 @@ public class Cliente {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	public int getYear() {
-		return year;
-	}
-	public void setYear(int year) {
-		this.year = year;
-	}
+	
 	
 }

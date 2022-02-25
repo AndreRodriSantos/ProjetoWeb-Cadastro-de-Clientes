@@ -38,6 +38,9 @@ h4{
 	margin: 20px;
 	font-weight: bold;
 }
+#idade{
+	background-color: #c3c3c3;
+}
 </style>
 </head>
 <body>
@@ -65,6 +68,13 @@ h4{
 			<p>Quinta: ${status.qui }</p>
 			<p>Sexta: ${status.sex }</p>
 			<p>Sábado: ${status.sab }</p>
+		</div>
+		
+		<div id="idade">
+			<h4>Quantidade de Clientes por faixa Etaria</h4>
+			<p>Jovens: ${status.jovem }</p>
+			<p>Adulto: ${status.adulto }</p>
+			<p>Idosos: ${status.idoso }</p>
 		</div>
 	</div>
 </body>

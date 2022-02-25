@@ -14,6 +14,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import org.apache.taglibs.standard.tag.rt.fmt.SetBundleTag;
+
 import br.andre.caio.atividade2.model.Cliente;
 import br.andre.caio.atividade2.model.Estatistica;
 import br.andre.caio.atividade2.model.produtoPreferencia;
@@ -61,15 +63,7 @@ public class DaoCliente {
 			cliente.setDiaSemana(diaDaSemana);
 			stmt.setInt(9, cliente.getDiaSemana());
 			
-			//faixa etária Jovem, Adulto, Idoso
-			
-			DateTimeFormatter formatter_ano = DateTimeFormatter.ofPattern("yyyy");
-			String ano = formatter.format(LocalDateTime.now());
-			int anoConvertido = Integer.parseInt(ano);
-			
-			int idadeResult = 0;
 			stmt.setInt(10, cliente.getIdade());
-			
 			stmt.execute();
 			conexao.close();
 			stmt.close();
@@ -221,7 +215,7 @@ public class DaoCliente {
 					
 				}
 				
-				// conta o periodo do Dia
+				//Conta o periodo do Dia
 				c.setHoraCadastro(result.getInt("horaCadastro"));
 				if (c.getHoraCadastro() < 12) {
 					dia++;
@@ -231,11 +225,9 @@ public class DaoCliente {
 					
 				} else {
 					noite++;
-					
-
 				}
 				
-				//conta o dias da semana
+				//Conta o dias da semana
 				c.setDiaSemana(result.getInt("diaSemana"));
 				
 				switch (c.getDiaSemana()) {
@@ -261,10 +253,30 @@ public class DaoCliente {
 					sab++;
 					break;
 				}
+				
+				//faixa etária Jovem, Adulto, Idoso
+				Calendar nasc = Calendar.getInstance();
+				Date datanasc = result.getDate("data");
+				nasc.setTimeInMillis(datanasc.getTime());
+				c.setData(nasc);
+				
+				int ano_nasc = nasc.get(Calendar.YEAR);
+				
+				DateTimeFormatter formatter_ano = DateTimeFormatter.ofPattern("yyyy");
+				String ano = formatter_ano.format(LocalDateTime.now());
+				int anoConvertido = Integer.parseInt(ano);
+				
+				int idadeResult = anoConvertido - ano_nasc;
+				c.setIdade(idadeResult);
+				
+				if(c. getIdade() < 25) {
+					qtdJovem++;
+				}else if(c. getIdade() < 60) {
+					qtdAdulto++;
+				}else {
+					qtdIdoso++;
+				}
 			}
-			//Calendar cal = Calendar.getInstance();
-			//int anoatual;
-			//Calendar.get
 			
 			stmt.execute();
 			stmt.close();
@@ -286,6 +298,11 @@ public class DaoCliente {
 			status.setQui(qui);
 			status.setSex(sex);
 			status.setSab(sab);
+			
+			//data de nascimento
+			status.setJovem(qtdJovem);
+			status.setAdulto(qtdAdulto);
+			status.setIdoso(qtdIdoso);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
