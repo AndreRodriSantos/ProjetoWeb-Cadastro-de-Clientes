@@ -16,6 +16,13 @@ public class AtividadeController {
 		model.addAttribute("tipos", produtoPreferencia.values());
 		return "index";
 	}
+	
+	@RequestMapping("login")
+	public String login(Model model) {
+		model.addAttribute("tipos", produtoPreferencia.values());
+		return "login";
+	}
+	
 	@RequestMapping("salvarCliente")
 	public String salvarCliente(Cliente cliente) {
 		DaoCliente dao = new DaoCliente();
@@ -25,7 +32,7 @@ public class AtividadeController {
 			dao.atualizar(cliente);
 		}
 		
-		return "redirect:lista_Cliente";
+		return "redirect:index";
 	}
 	@RequestMapping("lista_Cliente")
 	public String listarClientes(Model model) {
@@ -43,7 +50,7 @@ public class AtividadeController {
 	public String alterar(long idCliente, Model model) {
 		DaoCliente dao = new DaoCliente();
 		model.addAttribute("clientes", dao.buscar(idCliente));
-		return "forward:index";
+		return "forward:login";
 	}
 	@RequestMapping("Estatistica")
 	public String Estatisticas(Model model) {
@@ -51,4 +58,5 @@ public class AtividadeController {
 		model.addAttribute("status", dao.contador());
 		return "Estatisticas";
 	}
+	
 }
