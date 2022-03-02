@@ -2,16 +2,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="a"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="CSS/Style_login.css">
+<link rel="icon" href="img/Logo.png">
 <title>login</title>
 </head>
 <body>
-	
+
     <div class="container">
         <div class="forms-continer">
             <div class="signin-signup">
@@ -21,6 +22,7 @@
                         <div class="container-form">
                             <div class="title-form">Registration</div>
                             <form id="register" action="salvarCliente">
+                            <input type="hidden" name="id" value="${clientes.id }">
                                 <span class="f-text">Nome</span>
                                 <div class="input-field">
                                     <i class="fas fa-user"></i>
@@ -49,9 +51,8 @@
                                 <span class="f-text">Data de Nacimento</span>
                                 <div class="input-field">
                                     <i class="fas fa-lock"></i>
-                                    <input type="date"  placeholder="Data de Nascimento" required name="data"value="<fmt:formatDate pattern="yyyy-MM-dd" value="${clientes.data.time }"/>
+                                    <input type="date"  placeholder="Data de Nascimento" required name="data" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${clientes.data.time }"/>">
                                 </div>
-
                                 <div class="gender-details">
                                     <input type="radio" name="genero" id="Masculino" value="Masculino" required="required" value="${clientes.genero }">
                                     <input type="radio" name="genero" id="Feminino" value="Feminino" required="required" value="${clientes.genero }">
@@ -69,7 +70,6 @@
                                 </div>
                                 
                                 <div class="title-pr">Produto de Preferência</div>
-
                             <div class="custom-select">
                                
                 				<select name="produtoPref" class="tp-produto">
@@ -77,20 +77,15 @@
                       			  		<option <c:if test="${cliente.produtoPref == t }">selected</c:if> value="${t}">${t.toString()}</option>
                   				 	</c:forEach>
                 				</select>
-             	
                                 <span class="custom-arrow"></span>
                             </div>
-                                
                                 <div class="button-form">
                                 	<button type="submit" class="btn-form">Register</button>
-                            	</div> 
-                                   
+                            	</div>
                             </form>
-                         	 	
                         </div>
                     </div>
                 </div>
-
                 <div class="teste-F">
                     <div class="sign-up-form">
                         <div class="container-form">
@@ -107,10 +102,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
         <div class="panels-container">
             <div class="panel left-painel">
                 <div class="content">
@@ -121,7 +114,6 @@
                 </div>
                 <img src="img/sorvete-mike.png" class="image" alt="">
             </div>
-
             <div class="panel right-painel">
                 <div class="content">
                     <h3>Types of ice cream</h3>
@@ -135,4 +127,4 @@
     </div>
     <script src="JS/login.js"></script>
 </body>
-</html>
+</html> 

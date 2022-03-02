@@ -8,6 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="CSS/Style_list.css">
+<link rel="icon" href="img/Logo.png">
 <title>List</title>
 </head>
 
