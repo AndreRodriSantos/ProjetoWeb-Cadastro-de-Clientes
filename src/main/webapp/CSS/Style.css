@@ -59,10 +59,7 @@ html{
     padding: 10px;
 }
 .nav__logo{
-    font-size: 2rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: #000;
+     margin-top: 15px;
 }
 .nav__togglen, .nav__shop{
     font-size: 1.3rem;

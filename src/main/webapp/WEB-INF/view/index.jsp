@@ -9,8 +9,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="CSS/Style.css">
-   <link rel="icon" href="img/Logo.png">
+   	<link rel="stylesheet" href="CSS/Style.css">
+   	<link rel="icon" href="img/Logo.png">
     <title>l o j a</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
                 <a href="#"><img src="img/menu.png"></a>
             </div>
 
-            <a href="#" class="nav__logo">l o j a</a>
+            <a href="#" class="nav__logo"><img src="img/logo.png"></a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -53,7 +53,7 @@
                     <span class="home__new">Sorveteria Chilinho</span>
                     <h1 class="home__title">Loja de Sorveteria <br> Chilinho - DS</h1>
                     <p class="home__description">Conheça nossa Loja de Sorvete</p>
-                    <a href="#" class="button">Explore now</a>
+                    <a href="#" class="button">Explorar agora</a>
                 </div>
             </div>        
         </section>
@@ -64,20 +64,20 @@
                 <img src="img/milk.jpg" class="story__img">
             </div>
                 <div class="story__data">
-                    <h1 class="home__title">Our Story</h2>
+                    <h1 class="home__title">Nossa história</h2>
                     
                         <h1 class="story__title">
-                            Sorvetes prontos para o ATAQUE!
+                            O Sorvete de Respeito!
                         </h1>
 
                         <p class="story__description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing 
-                            elit. Recusandae ullam labore vitae blanditiis cumque, 
-                            eos, minima placeat corporis modi, expedita illo nemo.
-                            Assumenda, quod aspernatur!
+                            No nosso web-site você encontra os mais diversos tipos de sovete.<br>
+                            Nossa especialidade é levar doçura com uma receita de família, 
+                            nossos sorvetes são feitos com insumos de origem italiana, além de 
+                            serem produzidos de forma semi-artesanal.
                         </p>
 
-                    <a href="#" class="button button--smll">Discover</a> 
+                    <a href="#" class="button button--smll">Descobrir</a> 
                 </div>
         </section>
 
@@ -108,12 +108,12 @@
                         <div class="shoeName">
                             <div>
                                 <h1 class="big">Sorvetes Da Loja</h1>
-                                <span class="new">new</span>
+                                <span class="new">Novo</span>
                             </div>
-                            <h3 class="small">Most requested ice cream</h3>
+                            <h3 class="small">Sorvetes mais pedidos</h3>
                         </div>
                         <div class="description">
-                            <h3 class="title">Product Info</h3>
+                            <h3 class="title">Informação do produto</h3>
                             <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis molestias veritatis libero consequatur? Laborum maiores cumque, libero aliquid dignissimos explicabo, similique aperiam quasi non odit dolore a modi expedita suscipit?</p>
                         </div>
                         <div class="color-container">
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                         <div class="buy-price">
-                            <a href="#shop" class="buy"><img src="img/shopping-cart-while.png">Add to card</a>
+                            <a href="#shop" class="buy"><img src="img/shopping-cart-while.png">Comprar</a>
                             <div class="price">
                                 <img src="img/money.png">
                                 <h1>29.99</h1>
@@ -151,25 +151,25 @@
 
         <!-- FORM COMPRAS -->
         <form class="payment" action="cadastro" >
-            <h1 class="payTitle">Personal Information</h1>
-            <label for="">Name and Surname</label>
-            <input type="text" placeholder="Name Surname" class="payInput">
-            <label for="">Phone Number</label>
+            <h1 class="payTitle">Informação Pessoal</h1>
+            <label for="">Nome e sobrenome</label>
+            <input type="text" placeholder="Nome sobrenome" class="payInput">
+            <label for="">Número de telefone</label>
             <input type="text" placeholder="+11 9 9002 8922" class="payInput">
-            <label for="">Address</label>
+            <label for="">Endereço</label>
             <input type="text" placeholder="São Paulo" class="payInput">
-            <h1 class="payTitle">Card Information</h1>
+            <h1 class="payTitle">Informações do cartão</h1>
             <div class="cardIcons">
                 <img src="img/visa.png" class="cardIcon">
                 <img src="img/mastercard.png" class="cardIcon">
             </div>
-            <input type="password" class="payInput" placeholder="Card Number">
+            <input type="password" class="payInput" placeholder="Número do cartão">
             <div class="cardInfo">
                 <input type="text" placeholder="mm" class="payInput sm">
                 <input type="text" placeholder="yyyy" class="payInput sm">
                 <input type="text" placeholder="cvv" class="payInput sm">
             </div>
-            <button class="payButton">Checkout!</button>
+            <button class="payButton">Confira!</button>
             <span class="close">X</span>          
         </form>
         <script src="JS/form-compra.js"></script>
@@ -185,7 +185,7 @@
                            Chilinho Sorveteiro tem um web-site da sorveteria mais
                            amada de São Paulo.
                         </p>
-                        <a href="#">ReD More</a>
+                        <a href="#">Saiba Mais</a>
                     </div>
                     <img src="img/chilinho sorveteiro.png">
                 </div>
@@ -219,7 +219,7 @@
             <div class="onda onda4"></div>
         </section>
         <div class="footer-left">
-            <h3>l o j a <span>Chilinho</span></h3>
+            <a href="#" class=""><img src="img/logo.png"></a>
 
             <p class="footer-links">
                 <a href="#">Home</a>

@@ -20,7 +20,7 @@
                 <div class="teste-F">
                     <div class="sign-in-form">
                         <div class="container-form">
-                            <div class="title-form">Registration</div>
+                            <div class="title-form">Cadastro</div>
                             <form id="register" action="salvarCliente">
                             <input type="hidden" name="id" value="${clientes.id }">
                                 <span class="f-text">Nome</span>
@@ -80,7 +80,7 @@
                                 <span class="custom-arrow"></span>
                             </div>
                                 <div class="button-form">
-                                	<button type="submit" class="btn-form">Register</button>
+                                	<button type="submit" class="btn-form">Registrar</button>
                             	</div>
                             </form>
                         </div>
@@ -107,19 +107,19 @@
         <div class="panels-container">
             <div class="panel left-painel">
                 <div class="content">
-                    <h3>New here?</h3>
+                    <h3>Novo aqui?</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Ut porro eum, hic temporibus quam cum rem aliquid nulla </p>
-                    <button class="btn trasnparent" id="sign-up-btn">Choose</button>
+                    <button class="btn trasnparent" id="sign-up-btn">Escolher</button>
                 </div>
                 <img src="img/sorvete-mike.png" class="image" alt="">
             </div>
             <div class="panel right-painel">
                 <div class="content">
-                    <h3>Types of ice cream</h3>
+                    <h3>Tipos de sorvete</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Ut porro eum, hic temporibus quam cum rem aliquid nulla </p>
-                    <button class="btn trasnparent" id="sign-in-btn">Sing In</button>
+                    <button class="btn trasnparent" id="sign-in-btn">Entrar</button>
                 </div>
                 <img src="img/ice.png" class="image" alt="">
             </div>
