@@ -20,7 +20,7 @@
                 <a href="#"><img src="img/menu.png"></a>
             </div>
 
-            <a href="#" class="nav__logo"><img src="img/logo.png"></a>
+            <a href="#" class="nav__logo"><img src="img/Logo.png"></a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -32,7 +32,6 @@
                      
                 </ul>
             </div>
-
             <div class="nav_shop">
                 <a href="#shop"><img src="img/shopping-cart.png"></a>
             </div>
@@ -51,7 +50,7 @@
     
                 <div class="home__data">
                     <span class="home__new">Sorveteria Chilinho</span>
-                    <h1 class="home__title">Loja de Sorveteria <br> Chilinho - DS</h1>
+                    <h1 class="home__title">Quiosque de Sorvete <br>do Chilinho - DS</h1>
                     <p class="home__description">Conheça nossa Loja de Sorvete</p>
                     <a href="#" class="button">Explorar agora</a>
                 </div>
@@ -71,7 +70,7 @@
                         </h1>
 
                         <p class="story__description">
-                            No nosso web-site você encontra os mais diversos tipos de sovete.<br>
+                            No nosso web-site você encontra os mais diversos tipos de sorvete.<br>
                             Nossa especialidade é levar doçura com uma receita de família, 
                             nossos sorvetes são feitos com insumos de origem italiana, além de 
                             serem produzidos de forma semi-artesanal.
@@ -219,7 +218,7 @@
             <div class="onda onda4"></div>
         </section>
         <div class="footer-left">
-            <a href="#" class=""><img src="img/logo.png"></a>
+            <a href="#" class=""><img src="img/Logo.png"></a>
 
             <p class="footer-links">
                 <a href="#">Home</a>

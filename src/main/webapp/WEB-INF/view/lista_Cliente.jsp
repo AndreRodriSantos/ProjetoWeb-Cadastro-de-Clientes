@@ -11,8 +11,30 @@
 <link rel="icon" href="img/Logo.png">
 <title>List</title>
 </head>
+<header class="l-header" id="header">
+        <nav class="nav bd-grid">
+            <div class="nav__toggle" id="nav-toggle">
+                <a href="#"><img src="img/menu.png"></a>
+            </div>
 
+            <a href="#" class="nav__logo"><img src="img/Logo.png"></a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index" class="nav__link active1"><img src="img/home.png" alt=""></a></li>
+                    <li class="nav__item"><a href="login" class="nav__link"><img src="img/user.png" alt=""></a></li>
+                    <li class="nav__item"><a href="lista_Cliente" class="nav__link"><img src="img/settings.png" alt=""></a></li>
+                    <li class="nav__item"><a href="" class="nav__link"><img src="img/log-out.png" alt=""></a></li>
+                    
+                     
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <script src="JS/header.js"></script>
+    
 <body>
+
 	 <table>
         <thead>
             <tr>
@@ -46,7 +68,7 @@
 		    </c:forEach>
         </tbody>
             <div class="btn">
-                <a class="estatisticas" href="Estatistica"><img src="img/user+.png"></a>
+                <a class="estatisticas" href="Estatistica"><img src="img/status.png" class="status"></a>
             </div>
     </table>
 	

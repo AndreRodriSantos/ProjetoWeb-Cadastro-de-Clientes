@@ -34,10 +34,6 @@
                                     <input type="email" placeholder="Email " required name="email" value="${clientes.email }">
                                 </div>
                                 <span class="f-text">Senha</span>
-                                <div class="input-field">
-                                    <i class="fas fa-user"></i>
-                                    <input type="password" placeholder="Enter Password" required>
-                                </div>
                                 <span class="f-text">Endereço</span>
                                 <div class="input-field">
                                     <i class="fas fa-lock"></i>
@@ -88,18 +84,7 @@
                 </div>
                 <div class="teste-F">
                     <div class="sign-up-form">
-                        <div class="container-form">
-                        	 <div class="title-form">Produto de Preferência</div>
-                                <div class="custom-select">
-                                    <select name="" id="">
-                                        <option value="">Sorvete</option>
-                                        <option value="">MilkShake</option>
-                                        <option value="">Picole</option>
-                                        <option value="">Sundae</option>
-                                    </select>
-                                    <span class="custom-arrow"></span>
-                                </div>
-                        </div>
+                        	 <a  href="lista_Cliente"><button class="btn-lista">Lista</button></a>
                     </div>
                 </div>
             </div>
@@ -107,19 +92,17 @@
         <div class="panels-container">
             <div class="panel left-painel">
                 <div class="content">
-                    <h3>Novo aqui?</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ut porro eum, hic temporibus quam cum rem aliquid nulla </p>
-                    <button class="btn trasnparent" id="sign-up-btn">Escolher</button>
+                    <h3>Cadastro de Clientes</h3>
+                    <p>Seja bem-vindo a nossa pagina para cadastro de clientes, clique para acessar a lista com todos os clientes da loja</p>
+                    <button class="btn trasnparent" id="sign-up-btn">Mais</button>
                 </div>
                 <img src="img/sorvete-mike.png" class="image" alt="">
             </div>
             <div class="panel right-painel">
                 <div class="content">
-                    <h3>Tipos de sorvete</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ut porro eum, hic temporibus quam cum rem aliquid nulla </p>
-                    <button class="btn trasnparent" id="sign-in-btn">Entrar</button>
+                    <h3>Lista de Clientes</h3>
+                    <p>Acesse a lista de clientes para ver, editar e excluir </p>
+                    <button class="btn trasnparent" id="sign-in-btn">Voltar</button>
                 </div>
                 <img src="img/ice.png" class="image" alt="">
             </div>

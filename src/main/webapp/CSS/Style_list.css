@@ -1,5 +1,5 @@
-*{
-    margin: 0 auto;
+table , l-header:not(.btn){
+	margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -11,6 +11,7 @@ body{
     align-items: center;
     font-size: 0.9rem;
     background-color: #eee;
+    
 }
 table{
     border-collapse: collapse;
@@ -55,8 +56,7 @@ td{
     padding: 30px;
     border-radius: 50%;
     border: 5px solid #0084ff;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    margin: 130px auto 10px auto;
 }
 .estatisticas{
     text-decoration: none;
@@ -64,4 +64,84 @@ td{
     text-transform: uppercase;
     color: #0084ff;
     
+}
+.bd-grid{
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
+}
+.l-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #eee;
+}
+.nav{
+    height: 5rem;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.nav__menu{
+    position: fixed;
+    top: 3rem;
+    left: -100%;
+    width: 70%;
+    height: 100vh;
+    padding: 2rem;
+    background-color: transparent;
+    transition: .5s;
+    
+}
+.nav__list{
+    margin: 200px auto;
+}
+.nav__item{
+    margin: 100px auto;
+    list-style: none; list-style: none;
+}
+.nav__link{
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #000;
+    display: table;
+    padding: 10px;
+}
+.nav__logo{
+     margin-top: 15px;
+}
+.nav__togglen, .nav__shop{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.show{
+    left: -50px;
+}
+.active1{
+    position: relative;
+}
+.active1::before{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 45%;
+    width: 4px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.scroll-header{
+    background-color: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0 ,.1);
+}
+.status{
+	height: 70px;
 }

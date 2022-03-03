@@ -29,7 +29,7 @@ public class DaoCliente {
 
 	public void inserir(Cliente cliente) {
 		String sql = "insert into cliente"
-				+ "(nome, data, genero, endereco, email, telefone, produtoPref, horaCadastro, diaSemana, idade) values (?,?,?,?,?,?,?,?,?,?)";
+				+ "(nome, data, genero, endereco, email, telefone, produtoPref, horaCadastro, diaSemana) values (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement stmt;
 		try {
 			stmt = conexao.prepareStatement(sql);
@@ -63,7 +63,6 @@ public class DaoCliente {
 			cliente.setDiaSemana(diaDaSemana);
 			stmt.setInt(9, cliente.getDiaSemana());
 			
-			stmt.setInt(10, cliente.getIdade());
 			stmt.execute();
 			conexao.close();
 			stmt.close();

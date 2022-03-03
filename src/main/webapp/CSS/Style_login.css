@@ -242,6 +242,24 @@ form input[type="radio"]{
     margin-top: 30px;
     transition: .5s;
 }
+.btn-lista{
+    width: 300px;
+    height: 49px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: .5s;
+}
+.btn-lista:hover{
+    background-color: #fff;
+    color: #000;
+}
 .btn-form:hover{
     background-color: #fff;
     color: #000;
