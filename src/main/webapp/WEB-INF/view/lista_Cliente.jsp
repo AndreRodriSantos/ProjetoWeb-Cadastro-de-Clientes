@@ -8,6 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="CSS/Style_list.css">
+<link rel="stylesheet" href="CSS/Style.css">
 <link rel="icon" href="img/Logo.png">
 <title>List</title>
 </head>
@@ -17,7 +18,7 @@
                 <a href="#"><img src="img/menu.png"></a>
             </div>
 
-            <a href="#" class="nav__logo"><img src="img/Logo.png"></a>
+            <a href="#" class="nav__logo"><img src="img/logo.png"></a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -28,6 +29,9 @@
                     
                      
                 </ul>
+            </div>
+            <div class="nav_shop">
+               
             </div>
         </nav>
     </header>

@@ -32,8 +32,7 @@
                                 <div class="input-field">
                                     <i class="fas fa-lock"></i>
                                     <input type="email" placeholder="Email " required name="email" value="${clientes.email }">
-                                </div>
-                                <span class="f-text">Senha</span>
+                                </div>        
                                 <span class="f-text">Endereço</span>
                                 <div class="input-field">
                                     <i class="fas fa-lock"></i>

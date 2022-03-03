@@ -20,7 +20,7 @@
                 <a href="#"><img src="img/menu.png"></a>
             </div>
 
-            <a href="#" class="nav__logo"><img src="img/Logo.png"></a>
+            <a href="#" class="nav__logo"><img src="img/logo.png"></a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -218,7 +218,7 @@
             <div class="onda onda4"></div>
         </section>
         <div class="footer-left">
-            <a href="#" class=""><img src="img/Logo.png"></a>
+            <a href="#" class=""><img src="img/logo.png"></a>
 
             <p class="footer-links">
                 <a href="#">Home</a>
