@@ -119,7 +119,7 @@ body, input{
     padding: 0.7rem 0;
 }
 .image{
-    width: 100%;
+    width: 90%;
     transition: 1.1s .4s ease-in-out;
 }
 .btn.trasnparent{
