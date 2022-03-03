@@ -1,12 +1,12 @@
 <%@page import="java.io.Console"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="utf-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="a"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <link rel="stylesheet" href="CSS/Style_list.css">
 <link rel="stylesheet" href="CSS/Style.css">
 <link rel="icon" href="img/Logo.png">
@@ -46,7 +46,7 @@
                 <td>Cliente</td>
                 <td>Email</td>
                 <td>N.Telefone</td>
-                <td>Endereço</td>
+                <td>EndereÃ§o</td>
                 <td>Data</td>
                 <td>Genero</td>
                 <td>Tipo de Produto</td>

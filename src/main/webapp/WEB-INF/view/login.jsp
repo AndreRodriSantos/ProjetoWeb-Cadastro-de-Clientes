@@ -21,7 +21,7 @@
                     <div class="sign-in-form">
                         <div class="container-form">
                             <div class="title-form">Cadastro</div>
-                            <form id="register" action="salvarCliente">
+                            <form id="register" action="salvarCliente" accept-charset="utf-8">
                             <input type="hidden" name="id" value="${clientes.id }">
                                 <span class="f-text">Nome</span>
                                 <div class="input-field">
@@ -49,8 +49,8 @@
                                     <input type="date"  placeholder="Data de Nascimento" required name="data" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${clientes.data.time }"/>">
                                 </div>
                                 <div class="gender-details">
-                                    <input type="radio" name="genero" id="Masculino" value="Masculino" required="required" value="${clientes.genero }">
-                                    <input type="radio" name="genero" id="Feminino" value="Feminino" required="required" value="${clientes.genero }">
+                                    <input type="radio" name="genero" id="Masculino" value="Masculino" required="required" <c:if test="${clientes.genero.equals('Masculino') }">checked</c:if> >
+                                    <input type="radio" name="genero" id="Feminino" value="Feminino" required="required" <c:if test="${clientes.genero.equals('Feminino') }">checked</c:if> >
                                     <span class="gender-title">Gênero</span>
                                     <div class="category">
                                         <label for="Masculino">
@@ -69,7 +69,7 @@
                                
                 				<select name="produtoPref" class="tp-produto">
                   					<c:forEach items="${tipos}" var="t">
-                      			  		<option <c:if test="${cliente.produtoPref == t }">selected</c:if> value="${t}">${t.toString()}</option>
+                      			  		<option <c:if test="${clientes.produtoPref == t }">selected</c:if> value="${t}">${t.toString()}</option>
                   				 	</c:forEach>
                 				</select>
                                 <span class="custom-arrow"></span>
